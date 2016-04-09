@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PSEUDO ELEMENTS</title>    
+    <style>
+        
+        /* :First-Letter */
+        p:first-letter { font-size: 20em; color: red; }
+        
+        /* :First-Line */
+        h2:first-line { font-variant: small-caps; color: blue; }
+        
+        /* ::selection and ::moz-selection - Exige o "::" */
+        ::selection { background: green; color: white; }
+        ::-moz-selection { background: green; color: white; }
+        
+        /* :before */
+        h4:before { content: url("btn-seta.gif"); }
+        
+        /* :after */
+        h4:after { content: " \00A9"; color: blue; }
+        
+        /* ESPECIAL - PSEUDO-ELEMENTS EM ATRIBUTOS */
+        a:hover {
+            position: relative;
+        }
+        
+        a[title]:hover:after {
+            position: absolute;
+            content: attr(title);
+            padding: 5px 10px;
+            width: 130px;
+            left: 0;
+            top: 25px;
+            border: 1px solid black;            
+        }
+        
+        /* ESPECIAL - PSEUDO-ELEMENTS EM CLASSES */
+        h5.pseudo:after {
+            content: " texto em vermelho.";
+            color: red;
+            font-size: 20px;
+        }   
+
+
+    </style>
+
+</head>
+<body>
+    
+<p>Aplica os estilos a primeira letra de "p".</p>
+ 
+<h2>Aplica os estilos a primeira linha <br />
+    Temos um efeito especial.</h2>
+
+<h4>Aplica os estilos ao content da propriedade.</h4>
+    
+<a title="Usando pseudo" href="#">Passe o mouse.</a>
+
+<h5 class="pseudo">Aplicando em uma classe.</h5>
+</body>
+</html>
